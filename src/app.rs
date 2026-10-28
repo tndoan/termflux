@@ -14,6 +14,7 @@ use crate::animation::Animation;
 use crate::animation::external::ExternalProgram;
 use crate::animation::fire::Fire;
 use crate::animation::matrix::MatrixRain;
+use crate::animation::purr::Purr;
 use crate::animation::starfield::Starfield;
 use crate::compositor::Compositor;
 use crate::config::Config;
@@ -45,6 +46,7 @@ impl App {
             Box::new(Starfield::new(STAR_COUNT, bg_color)),
             Box::new(MatrixRain::new(cols, rows, bg_color)),
             Box::new(Fire::new(cols, rows, bg_color)),
+            Box::new(Purr::new(bg_color)),
         ];
 
         // Add external animation if configured
@@ -63,6 +65,7 @@ impl App {
             "starfield" => 0,
             "matrix" => 1,
             "fire" => 2,
+            "purr" => 3,
             "external" => external_index.unwrap_or(0),
             "none" => animations.len(), // past end = "none"
             _ => 0,
@@ -149,7 +152,7 @@ impl App {
                             self.compositor.animation_enabled = !self.compositor.animation_enabled;
                         }
                         AppEvent::CycleAnimation => {
-                            // Cycle: starfield → matrix → fire → none → starfield
+                            // Cycle: starfield → matrix → fire → purr → none → starfield
                             self.animation_index = (self.animation_index + 1) % (self.animations.len() + 1);
                             self.compositor.animation_enabled = self.animation_index < self.animations.len();
                         }

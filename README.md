@@ -19,6 +19,7 @@ That's it — your terminal now has an animated background. You need [Rust](http
 - **Starfield** - Parallax 3D star field with twinkling
 - **Matrix** - Matrix-style rain with katakana characters
 - **Fire** - Perlin noise-based fire simulation
+- **Purr** - A "PURR" banner made of cat faces fades in, then a cat walks in, curls up and sleeps
 
 ## External Programs
 
@@ -77,7 +78,7 @@ Termflux loads configuration from:
 ### Example config.toml
 
 ```toml
-# Animation: "starfield", "matrix", "fire", "external", or "none"
+# Animation: "starfield", "matrix", "fire", "purr", "external", or "none"
 animation = "starfield"
 
 # Animation opacity (0.0 = invisible, 1.0 = full)
@@ -193,6 +194,19 @@ disable_animation_alt_screen = false
 ```
 
 Replace `starfield` by `fire` or `matrix` if you want to use these built-in animation
+
+### Use `Purr` (built-in)
+
+<img src="gif/Purr.gif" width="600" height="400" alt="Demo">
+
+Example `config.toml`
+
+```
+animation = "purr"
+opacity = 0.8
+fps = 30
+disable_animation_alt_screen = false
+```
 
 ## License
 

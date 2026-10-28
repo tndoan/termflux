@@ -1,4 +1,4 @@
-# Animation: "starfield", "matrix", "fire", "external", or "none"
+# Animation: "starfield", "matrix", "fire", "purr", "external", or "none"
 animation = "starfield"
 
 # Animation opacity (0.0 = invisible, 1.0 = full)

@@ -1,6 +1,7 @@
 pub mod external;
 pub mod fire;
 pub mod matrix;
+pub mod purr;
 pub mod starfield;
 
 use ratatui::buffer::Buffer;
